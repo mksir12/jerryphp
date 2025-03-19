@@ -1,0 +1,15 @@
+services:
+  - name: jerryphp
+    type: web
+    runtime: docker
+    repo: https://github.com/mksir12/jerryphp
+    envVars:
+      - key: PORT
+        value: 80
+    plan: free
+    region: oregon
+    disk:
+      name: jerryphp_disk
+      mountPath: /var/www/html
+      sizeGB: 0.5
+    autoDeploy: true
